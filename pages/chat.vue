@@ -16,8 +16,8 @@
                   <template v-slot:default="message">
                     <v-list-item :key="message.index">
                       <v-list-item-content>
-                        <v-list-item-title>
-                          Me: {{ message.item.me }}, content: {{ message.item.content }}
+                        <v-list-item-title :class="message.item.me ? ['chatbubble-me'] : ['chatbubble-other']">
+                          {{ message.item.content }}
                         </v-list-item-title>
                       </v-list-item-content>
 
@@ -70,6 +70,10 @@ export default {
       {
         me: false,
         content: 'This is a test'
+      },
+      {
+        me: true,
+        content: 'This is a test from me'
       }
     ]
   })
