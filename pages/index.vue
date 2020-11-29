@@ -5,7 +5,7 @@
         <v-card-title>Welcome to HealthSupport !</v-card-title>
         <v-card-text>
           HealthSupport is a ChatBot which aims to improve mental health through discussion with the user.
-          It analyses the intent, and uses standardized answers proven to better mood and emotion regulation. 
+          It analyses the intent, and uses standardized answers proven to better mood and emotion regulation.
           It is open source, and you can see the source code at the following links:
           <div class="spacer"></div>
           <ul>
@@ -40,7 +40,7 @@ export default {
   }),
   methods: {
     redirect_chat: () => {
-      this.$router.push('/chat')
+      window.location.href = "https://rasa.healthassist.redbluefla.me/guest/conversations/production/a743bdaa038742acbb1fd6609760907d"
     }
   }
 }
