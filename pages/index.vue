@@ -4,7 +4,8 @@
       <v-card>
         <v-card-title>Welcome to HealthSupport !</v-card-title>
         <v-card-text>
-          HealthSupport is a ChatBot that will help you if you have mental issues.
+          HealthSupport is a ChatBot which aims to improve mental health through discussion with the user.
+          It analyses the intent, and uses standardized answers proven to better mood and emotion regulation. 
           It is open source, and you can see the source code at the following links:
           <div class="spacer"></div>
           <ul>
