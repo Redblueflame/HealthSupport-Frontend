@@ -12,7 +12,7 @@
             <li><a href="https://github.com/Redblueflame/healthassist-bot">
               <v-icon>{{ icons.mdiGithub }}</v-icon>
               Chatbot sourcecode</a></li>
-            <li><a href="https://github.com/Redblueflame/HealthSupport-Frontend">
+            <li><a href="https://github.com/Redblueflame/healthassist-frontend">
               <v-icon>{{ icons.mdiGithub }}</v-icon>
               Frontend (this website)</a></li>
           </ul>

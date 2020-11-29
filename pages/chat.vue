@@ -21,7 +21,7 @@
                         </v-list-item-title>
                       </v-list-item-content>
 
-                
+
                     </v-list-item>
                   </template>
                 </v-virtual-scroll>
@@ -85,15 +85,6 @@ export default {
       this.socket.sendMessage(this.chatMessage)
       this.chatMessage = null
 
-    }
-  },
-  mounted() {
-    this.socket = new Bot()
-    this.socket.connect()
-    let vm = this
-    this.socket.handler = (data) => {
-      console.log(data)
-      vm.messages.push({me: false, content: data})
     }
   }
 }
