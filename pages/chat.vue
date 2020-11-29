@@ -77,15 +77,7 @@ export default {
 
   }),
   methods: {
-    sendChat: function () {
-      if (this == undefined || this.chatMessage == undefined) {
-        return
-      }
-      this.messages.push({me: true, content: this.chatMessage})
-      this.socket.sendMessage(this.chatMessage)
-      this.chatMessage = null
 
-    }
   }
 }
 </script>
