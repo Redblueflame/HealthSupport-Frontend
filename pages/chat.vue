@@ -4,7 +4,7 @@
       <v-card>
         <v-card-title>Chat with Auriane</v-card-title>
         <v-card-text>
-          <v-form>
+          <v-form v-on:submit.prevent="sendChat">
             <v-container fill-height>
               <v-row>
                 <v-virtual-scroll
@@ -42,7 +42,7 @@
                   md="2"
 
                 >
-                  <v-btn color="blue" icon>
+                  <v-btn color="blue" icon v-on:click="sendChat">
                     <v-icon>mdi-send</v-icon>
                   </v-btn>
                 </v-col>
@@ -56,10 +56,14 @@
 </template>
 
 <script lang="ts">
+import {Socket} from "socket.io-client";
+import {Bot} from "~/js/bot";
+
 export default {
   components: {},
   data: () => ({
     chatMessage: '',
+    socket: null,
     messages: [
       {
         me: false,
@@ -69,8 +73,29 @@ export default {
         me: true,
         content: 'This is a test from me'
       }
-    ]
-  })
+    ],
+
+  }),
+  methods: {
+    sendChat: function () {
+      if (this == undefined || this.chatMessage == undefined) {
+        return
+      }
+      this.messages.push({me: true, content: this.chatMessage})
+      this.socket.sendMessage(this.chatMessage)
+      this.chatMessage = null
+
+    }
+  },
+  mounted() {
+    this.socket = new Bot()
+    this.socket.connect()
+    let vm = this
+    this.socket.handler = (data) => {
+      console.log(data)
+      vm.messages.push({me: false, content: data})
+    }
+  }
 }
 </script>
 
