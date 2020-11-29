@@ -21,14 +21,8 @@
                         </v-list-item-title>
                       </v-list-item-content>
 
-                      <v-list-item-action>
-                        <v-icon small>
-                          mdi-open-in-new
-                        </v-icon>
-                      </v-list-item-action>
+                
                     </v-list-item>
-
-                    <v-divider></v-divider>
                   </template>
                 </v-virtual-scroll>
               </v-row>
@@ -81,5 +75,55 @@ export default {
 </script>
 
 <style scoped>
+
+.chatbubble-me{
+  position : left;
+  background: #4e4747;
+  padding: 1.125em 1.5em;
+	font-size: 1.25em;
+	border-radius: 1rem;
+}
+.chatbubble-me:after {
+	content: '';
+	position: absolute;
+	left: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 15px solid transparent;
+	border-right-color: #4e4747;
+	border-left: 0;
+  border-top: 0;
+	margin-top: -15px;
+	margin-left: 2px;
+}
+
+.chatbubble-other{
+  position : right;
+  background: #aca6a6;
+  padding: 1.125em 1.5em;
+	font-size: 1.25em;
+	border-radius: 1rem;
+}
+.chatbubble-other:after {
+	content: '';
+	position: absolute;
+	right: 0;
+	top: 50%;
+	width: 0;
+	height: 0;
+	border: 15px solid transparent;
+	border-left-color: #aca6a6;
+	border-right: 0;
+	border-top: 0;
+	margin-top: -15px;
+	margin-right: 2px;
+}
+
+
+
+
+
+
 
 </style>
