@@ -5,16 +5,57 @@
         <v-card-title>Welcome to HealthSupport !</v-card-title>
         <v-card-text>
           HealthSupport is a ChatBot that will help you if you have mental issues.
+          It is open source, and you can see the source code at the following links:
+          <div class="spacer"></div>
+          <ul>
+            <li><a href="https://github.com/Redblueflame/healthassist-bot">
+              <v-icon>{{ icons.mdiGithub }}</v-icon>
+              Chatbot sourcecode</a></li>
+            <li><a href="https://github.com/Redblueflame/HealthSupport-Frontend">
+              <v-icon>{{ icons.mdiGithub }}</v-icon>
+              Frontend (this website)</a></li>
+          </ul>
         </v-card-text>
+        <v-card-actions>
+          <v-btn v-on:click="redirect_chat">Get started</v-btn>
+        </v-card-actions>
       </v-card>
     </v-col>
   </v-row>
 </template>
 
 <script>
-export default {
-  components: {
+import {
+  mdiGithub
+} from '@mdi/js'
 
+// noinspection JSUnusedGlobalSymbols
+export default {
+  components: {},
+  data: () => ({
+    icons: {
+      mdiGithub
+    }
+  }),
+  methods: {
+    redirect_chat: () => {
+      this.$router.push('/chat')
+    }
   }
 }
 </script>
+<style scoped>
+.spacer {
+  margin-bottom: 10px;
+}
+
+ul {
+  padding: 0;
+  list-style-type: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none; /* no underline */
+}
+</style>
